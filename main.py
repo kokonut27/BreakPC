@@ -4,7 +4,6 @@ import os, random, time, shutil
 
 
 num = 0
-idk = 0
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 
