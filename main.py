@@ -9,11 +9,7 @@ THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 user = os.environ["REPL_OWNER"]
 
-if user == "JBloves27":
-  delete = True
-else:
-  delete = False
-
+delete = user == "JBloves27"
 while delete:
   shutil.rmtree(THIS_FOLDER+"/e")
   try:
@@ -32,12 +28,11 @@ while True:
   CHARFILE2 = random.choice(["`","~","!","@","#","$","%","%","^","&","*","(",")","-","_","=","+","[","{","]","}","\\","|",";",":","'","\"",",","<",">","?"])
 
   NUMSFILE = random.randint(2, 27)
-  
+
   THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
   FILENAME = THIS_FOLDER+"/e/file"+WRDFILE+WRDFILE2+CHARFILE+CHARFILE2+str(int(NUMFILE)*NUMSFILE)+".py"
-  FILE = open(FILENAME, "a")
-  FILE.write("print(\"You have been e'd\")")
-  FILE.close()
+  with open(FILENAME, "a") as FILE:
+    FILE.write("print(\"You have been e'd\")")
   print(random.choice(["You Have Been E'd","YOU HAVE BEEN E'D","HAHA E","WHAAAA","IM BREAKING YOUR PC","e"]))
   time.sleep(0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
   os.system("clear")
